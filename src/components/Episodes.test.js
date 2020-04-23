@@ -1,5 +1,5 @@
 import React from "react";
-import { render, waitFor } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import Episodes from "./Episodes";
 
@@ -8,6 +8,6 @@ import { formatSeasons } from "../utils/formatSeasons";
 
 test("Renders correctly from a list of episodes", () => {
     const seasonOne = formatSeasons(mockData.data._embedded.episodes)["Season 1"];
-    const { queryAllByText} = render(<Episodes episodes={seasonOne} />);
+    const { queryAllByText } = render(<Episodes episodes={seasonOne} />);
     expect(queryAllByText(/season/i)).toHaveLength(8);
-})
+});
